@@ -1,5 +1,5 @@
 import json
-from helper import control_range
+from helper import control_range,ratio_proportion
 
 file_path = 'datas/for_double_slope_roofs/external_pressure_coefficients_0_angle.json'
 file_path_2 = 'datas/for_double_slope_roofs/external_pressure_coefficients_90_angle.json'
@@ -11,17 +11,6 @@ with open(file_path_2, 'r') as file:
 
 json_data_0_angle_obj = json.loads(json.dumps(json_data_0_angle))
 json_data_90_angle_obj = json.loads(json.dumps(json_data_90_angle))
-
-
-def ratio_proportion(num1, num2, num3, num4):
-    difference = num1 - num2
-    inc_or_dic = 'dec' if num1 > num2 else 'inc'
-    if (inc_or_dic == 'dec'):
-        dec = num4 * abs(difference) / num3
-        return num1 - dec
-    inc = num4 * abs(difference) / num3
-    return num1 + inc
-
 
 def find_parameters_90_directory(x_data, y_data, diference, wind_angle, z):
 

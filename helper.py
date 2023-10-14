@@ -9,5 +9,12 @@ def control_range(number):
         for i, num in enumerate(numbers):
             if num <= number <= numbers[i + 1]:
                 return [num, numbers[i + 1],False]
-        
+def ratio_proportion(num1, num2, num3, num4):
+    difference = num1 - num2
+    inc_or_dic = 'dec' if num1 > num2 else 'inc'
+    if (inc_or_dic == 'dec'):
+        dec = num4 * abs(difference) / num3
+        return num1 - dec
+    inc = num4 * abs(difference) / num3
+    return num1 + inc
     
